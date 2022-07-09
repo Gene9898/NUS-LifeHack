@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import  {Outlet,useNavigate} from "react-router-dom"
+import  {Outlet,useNavigate,Link} from "react-router-dom"
 import Login from "./Login";
 const App = () => {
+
   let navigate = useNavigate();
   const routeChange = () => {
     let path = 'Members';
@@ -9,9 +10,12 @@ const App = () => {
 
   }
   return (
-    <div>
+    <div id = "home">
+
         <h1>NUS Lifehack</h1>
-        <Login/>
+        <Link to="/login">Login</Link> | {" "}
+        <Link to="/register">Register</Link>
+        <Outlet/>
     </div>
   );
 }

@@ -2,8 +2,9 @@ import React, {useState} from "react";
 import {auth, logInWithEmailAndPassword} from "../firebase";
 import {useAuthState} from "react-firebase-hooks/auth";
 
-const Login = () => {
+const Register = () => {
     const [user, setUser] = useState({
+        name : "",
         email : "",
         password : ""
     });
@@ -29,9 +30,12 @@ const Login = () => {
 
     return (
     <div>
+        <h2>Register</h2>
         <form>
-            <h2>Login</h2>
-            <input type = "text" id = "username" placeholder = "Email" onChange = {handleChange} value = {user.email}/>
+            <input type = "text" id = "username" placeholder = "Name" onChange = {handleChange} value = {user.name}/>
+            <br/>
+            <br/>
+            <input type = "text" id = "email" placeholder = "Email" onChange = {handleChange} value = {user.email}/>
             <br/>
             <br/>
             <input type = "password" id = "password" placeholder = "Password" onChange = {handleChange} value = {user.password}/>
@@ -44,4 +48,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default Register;
