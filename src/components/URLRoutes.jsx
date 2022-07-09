@@ -4,6 +4,8 @@ import Register from './Register';
 import Login from './Login';
 import Members from './Members';
 import Maps from './Maps';
+import CreateEvent from './CreateEvent';
+
 const URLRoutes = () =>{
   return(
     <BrowserRouter>
@@ -13,6 +15,7 @@ const URLRoutes = () =>{
         <Route path="/register" element = {<Register/>}/>
         <Route path="/login" element = {<Login/>}/>
         <Route path="/members" element = {<Members/>}/>
+        <Route path="/createEvent" element = {<CreateEvent/>}/>
         <Route
           path="*"
           element={
