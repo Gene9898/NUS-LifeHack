@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {auth, logInWithEmailAndPassword} from "../firebase";
+import {auth, registerWithEmailAndPassword} from "../firebase";
 import {useAuthState} from "react-firebase-hooks/auth";
 
 const Register = () => {
@@ -32,7 +32,7 @@ const Register = () => {
     <div>
         <h2>Register</h2>
         <form>
-            <input type = "text" id = "username" placeholder = "Name" onChange = {handleChange} value = {user.name}/>
+            <input type = "text" id = "name" placeholder = "Name" onChange = {handleChange} value = {user.name}/>
             <br/>
             <br/>
             <input type = "text" id = "email" placeholder = "Email" onChange = {handleChange} value = {user.email}/>
@@ -41,7 +41,7 @@ const Register = () => {
             <input type = "password" id = "password" placeholder = "Password" onChange = {handleChange} value = {user.password}/>
             <br/>
             <br/>
-            <button type="submit" className = "btn btn-primary" onClick={() => logInWithEmailAndPassword(user.email, user.password)}>Submit</button>
+            <button className = "btn btn-primary" onClick={() => registerWithEmailAndPassword(user.name, user.email, user.password)}>Submit</button>
         </form>
         {/* <GetUser/> */}
     </div>

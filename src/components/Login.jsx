@@ -31,7 +31,7 @@ const Login = () => {
     <div>
         <form>
             <h2>Login</h2>
-            <input type = "text" id = "username" placeholder = "Email" onChange = {handleChange} value = {user.email}/>
+            <input type = "text" id = "email" placeholder = "Email" onChange = {handleChange} value = {user.email}/>
             <br/>
             <br/>
             <input type = "password" id = "password" placeholder = "Password" onChange = {handleChange} value = {user.password}/>
