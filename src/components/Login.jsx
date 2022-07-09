@@ -28,7 +28,7 @@ const Login = () => {
     // }
 
     return (
-    <div>
+    <div className = "login">
         <form>
             <h2>Login</h2>
             <input type = "text" id = "email" placeholder = "Email" onChange = {handleChange} value = {user.email}/>
