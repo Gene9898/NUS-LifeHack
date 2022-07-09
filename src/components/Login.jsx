@@ -33,7 +33,7 @@ const Login = () => {
             </div>
             <input type="password" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id = "password" placeholder = "Password" onChange = {handleChange} value = {user.password} required/>
         </div>
-        <button className = "btn btn-primary" onClick={() => logInWithEmailAndPassword(user.email, user.password)}>Submit</button>
+        <button className = "btn btn-primary " onClick={() => logInWithEmailAndPassword(user.email, user.password)}>Submit</button>
     </div>
     );
 }

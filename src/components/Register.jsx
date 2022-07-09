@@ -1,8 +1,10 @@
 import React, {useState} from "react";
 import {auth, registerWithEmailAndPassword} from "../firebase";
 
+var registerCheck = true;
 
 const Register = () => {
+
     const [user, setUser] = useState({
         name : "",
         email : "",
@@ -69,3 +71,4 @@ const Register = () => {
 }
 
 export default Register;
+export {registerCheck};

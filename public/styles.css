@@ -10,10 +10,11 @@
   padding: 20px;
   font-size : 20px;
 }
-
 .login,.register {
   display : table;
+  padding-top : 15px;
   padding-left : 30px;
+  position : absolute;
 }
 .row {
   display:table-row;
@@ -32,4 +33,17 @@
 
 .register-switch{
   padding : 20px 0;
+}
+.info{
+  position : absolute;
+  text-align :justify;
+  padding : 20px;
+  left : 600px;
+}
+
+.start-img {
+  position : absolute;
+  top : 450px;
+  width : 100%;
+  height : 500px;
 }
