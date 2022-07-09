@@ -3,7 +3,7 @@ const Members = () => {
     const [count,setCount] = useState(0);
 
     const handleChange = () => {
-        setCount(count+1);
+        console.log("error");
     }
     return (
      <div>

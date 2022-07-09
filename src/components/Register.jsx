@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {auth, registerWithEmailAndPassword} from "../firebase";
-import {useAuthState} from "react-firebase-hooks/auth";
 
 const Register = () => {
     const [user, setUser] = useState({
@@ -19,31 +18,31 @@ const Register = () => {
         });
     }
 
-    // const GetUser = () => {
-    //     return(
-    //     <div>
-    //         <h2>Username : {user.username}</h2>
-    //         <h2>Password : {user.password}</h2>
-    //     </div>
-    //     );
-    // }
-
     return (
-    <div>
+    <div className = "register">
         <h2>Register</h2>
-        <form>
-            <input type = "text" id = "name" placeholder = "Name" onChange = {handleChange} value = {user.name}/>
-            <br/>
-            <br/>
-            <input type = "text" id = "email" placeholder = "Email" onChange = {handleChange} value = {user.email}/>
-            <br/>
-            <br/>
-            <input type = "password" id = "password" placeholder = "Password" onChange = {handleChange} value = {user.password}/>
-            <br/>
-            <br/>
-            <button className = "btn btn-primary" onClick={() => registerWithEmailAndPassword(user.name, user.email, user.password)}>Submit</button>
-        </form>
-        {/* <GetUser/> */}
+
+        <div className="input-group mb-3 ">
+            <div className="input-group-prepend row">
+                <span className="input-group-text" id="inputGroup-sizing-default">Name</span>
+            </div>
+            <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id = "name" placeholder = "Name" onChange = {handleChange} value = {user.name} required/>
+        </div>
+        <div className="input-group mb-3">
+            <div className="input-group-prepend row">
+                <span className="input-group-text" id="inputGroup-sizing-default">Email</span>
+            </div>
+            <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id = "email" placeholder = "Email" onChange = {handleChange} value = {user.email} required/>
+        </div>
+
+        <div className="input-group mb-3">
+            <div className="input-group-prepend row">
+                <span className="input-group-text" id="inputGroup-sizing-default">Password</span>
+            </div>
+            <input type="password" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id = "password" placeholder = "Password" onChange = {handleChange} value = {user.password} required/>
+        </div>
+
+        <button className = "btn btn-primary" onClick={() => registerWithEmailAndPassword(user.name, user.email, user.password)}>Submit</button>
     </div>
     );
 }

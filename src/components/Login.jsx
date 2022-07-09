@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {auth, logInWithEmailAndPassword} from "../firebase";
-import {useAuthState} from "react-firebase-hooks/auth";
 
 const Login = () => {
     const [user, setUser] = useState({
@@ -18,28 +17,23 @@ const Login = () => {
         });
     }
 
-    // const GetUser = () => {
-    //     return(
-    //     <div>
-    //         <h2>Username : {user.username}</h2>
-    //         <h2>Password : {user.password}</h2>
-    //     </div>
-    //     );
-    // }
 
     return (
     <div className = "login">
-        <form>
-            <h2>Login</h2>
-            <input type = "text" id = "email" placeholder = "Email" onChange = {handleChange} value = {user.email}/>
-            <br/>
-            <br/>
-            <input type = "password" id = "password" placeholder = "Password" onChange = {handleChange} value = {user.password}/>
-            <br/>
-            <br/>
-            <button type="submit" className = "btn btn-primary" onClick={() => logInWithEmailAndPassword(user.email, user.password)}>Submit</button>
-        </form>
-        {/* <GetUser/> */}
+        <h2>Login</h2>
+        <div className="input-group mb-3 ">
+            <div className="input-group-prepend row">
+                <span className="input-group-text" id="inputGroup-sizing-default">Email</span>
+            </div>
+            <input type="text" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id = "email" placeholder = "Email" onChange = {handleChange} value = {user.email} required/>
+        </div>
+        <div className="input-group mb-3 ">
+            <div className="input-group-prepend row">
+                <span className="input-group-text" id="inputGroup-sizing-default">Password</span>
+            </div>
+            <input type="password" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id = "password" placeholder = "Password" onChange = {handleChange} value = {user.password} required/>
+        </div>
+        <button className = "btn btn-primary" onClick={() => logInWithEmailAndPassword(user.email, user.password)}>Submit</button>
     </div>
     );
 }

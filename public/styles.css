@@ -3,12 +3,22 @@
 }
 .navbar-brand {
   padding-left: 10px;
-  padding-right: 780px;
+  padding-right: 600px;
+  font-size : 30px;
 }
 .navitem {
   padding : 20px;
+  font-size : 20px;
 }
 
-.login {
-  padding : 200px 650px;
+.login,.register {
+  display : table;
+  padding-left : 30px;
 }
+.row {
+  display:table-row;
+}
+.input-group-prepend,.row {
+  width : 100px;
+}
+
