@@ -32,7 +32,7 @@ const Navbar = () => {
               </div>
             </li>
           </ul>
-            <div className = "input-group navitem">
+            <div className = "input-group search">
                 <form className="form-inline">
                     <input className="form-control" type="search" placeholder="Search" aria-label="Search"/>
                     <button className="btn btn-outline-success" type="submit">Search</button>

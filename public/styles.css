@@ -3,11 +3,11 @@
 }
 .navbar-brand {
   padding-left: 10px;
-  padding-right: 600px;
+  padding-right:500px;
   font-size : 30px;
 }
 .navitem {
-  padding : 20px;
+  padding: 20px;
   font-size : 20px;
 }
 
@@ -19,6 +19,17 @@
   display:table-row;
 }
 .input-group-prepend,.row {
-  width : 100px;
+  width : 130px;
+}
+.input-header {
+  font-size : 25px;
+  padding-bottom : 10px;
 }
 
+.search {
+  padding : 10px;
+}
+
+.register-switch{
+  padding : 20px 0;
+}
