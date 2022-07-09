@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {auth, registerWithEmailAndPassword} from "../firebase";
+import {auth, registerWithEmailAndPassword, registerWithEmailAndPasswordOrg} from "../firebase";
 
 var registerCheck = true;
 
@@ -65,7 +65,7 @@ const Register = () => {
             <input type="password" className="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id = "password" placeholder = "Password" onChange = {handleChange} value = {user.password} required/>
         </div>
 
-        <button className = "btn btn-primary" onClick={() => registerWithEmailAndPassword(user.name, user.email, user.password)}>Submit</button>
+        <button className = "btn btn-primary" onClick={() => {organisation ? registerWithEmailAndPasswordOrg(org, user.name, user.email, user.password):registerWithEmailAndPassword(user.name, user.email, user.password)}}>Submit</button>
     </div>
     );
 }

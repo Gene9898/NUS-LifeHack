@@ -80,6 +80,24 @@ const registerWithEmailAndPassword = async (name, email, password) => {
   }
 };
 
+const registerWithEmailAndPasswordOrg = async (organisation, name, email, password) => {
+    try {
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+      const user = res.user;
+      await addDoc(collection(db, "organisationUsers"), {
+        organisation: organisation,
+        uid: user.uid,
+        name,
+        authProvider: "local",
+        email,
+      });
+      console.log("success");
+    } catch (err) {
+      console.error(err);
+      alert(err.message);
+    }
+  };
+
 const sendPasswordReset = async (email) => {
   try {
     await sendPasswordResetEmail(auth, email);
@@ -100,6 +118,7 @@ export {
   signInWithGoogle,
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
+  registerWithEmailAndPasswordOrg,
   sendPasswordReset,
   logout,
 };
