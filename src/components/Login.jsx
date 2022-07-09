@@ -20,7 +20,7 @@ const Login = () => {
 
     return (
     <div className = "login">
-        <h2>Login</h2>
+        <h2 className = "input-header">Login</h2>
         <div className="input-group mb-3 ">
             <div className="input-group-prepend row">
                 <span className="input-group-text" id="inputGroup-sizing-default">Email</span>
