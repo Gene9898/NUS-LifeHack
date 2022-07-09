@@ -11,9 +11,7 @@ const App = () => {
   return (
     <div>
         <h1>NUS Lifehack</h1>
-        <button className = "btn btn-primary" onClick = {routeChange} >Fk you Jon</button>
         <Login/>
-    <Outlet/>
     </div>
   );
 }
