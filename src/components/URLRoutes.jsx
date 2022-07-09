@@ -3,6 +3,7 @@ import App from './App';
 import Register from './Register';
 import Login from './Login';
 import Members from './Members';
+import Maps from './Maps';
 const URLRoutes = () =>{
   return(
     <BrowserRouter>
@@ -21,6 +22,8 @@ const URLRoutes = () =>{
         }
         />
         </Route>
+        <Route path="/map" element = {<Maps/>}/>
+
       </Routes>
     </BrowserRouter>
   );
